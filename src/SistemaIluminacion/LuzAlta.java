@@ -5,18 +5,19 @@
 package SistemaIluminacion;
 
 import Funcionalidades.Encendido;
+import SistemaEncendido.Motor;
 
 /**
  *
  * @author Luisf
  */
 public class LuzAlta extends Encendido {
-    public void encender() {
-        super.encender();
-        System.out.println("Se encendio la luz alta");
+    public void encender(Motor motor) {
+        if (motor.isEstado()) {
+            super.encender();
+        }
     }
     public void apagar() {
         super.apagar();
-        System.out.println("Se apago la luz alta");
     }
 }

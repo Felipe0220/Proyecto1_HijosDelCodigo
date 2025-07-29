@@ -19,10 +19,8 @@ public class LucesPuertas extends Encendido {
     }
     public void abrirPuerta() {
         encender();
-        System.out.println("Puerta " + lado + " abierta, la luz de la puerta esta encendida");
     }
     public void cerrarPuerta() {
         apagar();
-        System.out.println("Puerta " + lado + " cerrada, la luz de la puerta esta apagada");
     }
 }

@@ -5,6 +5,7 @@
 package SistemaIluminacion;
 
 import Funcionalidades.Encendido;
+import SistemaEncendido.Motor;
 
 /**
  *
@@ -14,31 +15,29 @@ public class IntermitentesyEmergencia extends Encendido {
     private boolean intizquierda;
     private boolean intderecha;
 
-    public void encenderIntizquierda() {
-        intizquierda = true;
-        System.out.println("Intermitente izquierda encendida");
+    public void encenderIntizquierda(Motor motor) {
+        if (motor != null && motor.isEstado()) {
+            intizquierda = true;
+        }
     }
     public void apagarIntizquierda() {
         intizquierda = false;
-        System.out.println("Intermitente izquierda apagada");
     }
-    public void encenderIntderecha() {
-        intderecha = true;
-        System.out.println("Intermitente derecha encendida");
+    public void encenderIntderecha(Motor motor) {
+        if (motor != null && motor.isEstado()) {
+            intderecha = true;
+        }
     }
     public void apagarIntderecha() {
         intderecha = false;
-        System.out.println("Intermitente derecha apagada");
     }
-    public void activarEmergencia() {
-        encenderIntizquierda();
-        encenderIntderecha();
-        System.out.println("Luces de emergencia encendidas");
+    public void activarEmergencia(Motor motor) {
+        encenderIntizquierda(motor);
+        encenderIntderecha(motor);
     }
     public void apagarEmergencia() {
         apagarIntizquierda();
         apagarIntderecha();
-        System.out.println("Luces de emergencia apagadas");
     }
     public boolean isIzquierdaEncendida() {
         return intizquierda;
