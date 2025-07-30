@@ -37,7 +37,7 @@ public class Climatizacion extends Encendido {
     }
     
     public void bajarTemp(){
-        if(temperatura<15) temperatura--;
+        if(temperatura>15) temperatura--;
     }
     
     public void cambiarVelocidad(){
