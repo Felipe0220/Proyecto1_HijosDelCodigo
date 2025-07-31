@@ -26,12 +26,4 @@ public class Control_Cinturones  {
         this.Izquierdo = Izquierdo;
         this.derecho = derecho;
     }
-  
-  
-   
-   
-
-  
-   
-    
 }
