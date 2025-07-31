@@ -21,6 +21,5 @@ public enum Velocidad {
 
     private Velocidad() {
         this.velocidad = velocidad;
-    } 
-    
+    }     
 }

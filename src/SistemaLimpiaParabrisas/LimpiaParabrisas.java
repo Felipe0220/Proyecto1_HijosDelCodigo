@@ -11,12 +11,47 @@ import Funcionalidades.Encendido;
  * @author UTN
  */
 public class LimpiaParabrisas extends Encendido {
-    //true=activado,false=desactivado
-    private boolean Delantero;
-    private boolean Trasero;
-    
-    private void activacion(){
-        
+ 
+    private boolean activado;  // true = encendido
+    private Velocidad velocidad;
+
+      public LimpiaParabrisas() {
+        this.activado = false;
+        this.velocidad = Velocidad.LENTO;
     }
+  // Enciende/apaga el sistema
+    public void palanca() {
+        activado = !activado;
+    }
+     public void cambiarVelocidad() {
+        switch (velocidad) {
+            case LENTO -> {
+                velocidad = Velocidad.MEDIO;
+           
+            }
+            case MEDIO -> {
+                velocidad = Velocidad.RAPIDO;
+          
+            }
+            case RAPIDO -> {
+                velocidad = Velocidad.LENTO;
+              
+            }
+        }
+    }
+     public void activar() {
+        if (activado) {
+            // es para que se vea limbiando
+        }
+    }
+
+    public boolean isActivado() {
+        return activado;
+    }
+
+    public Velocidad getVelocidad() {
+        return velocidad;
+    }
+     
     
 }
