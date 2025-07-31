@@ -21,12 +21,8 @@ public void quitar(){
     this.sensor.activado(); 
 }
 
-<<<<<<< Updated upstream
+
     public Sensor getSensor() {
         return sensor;
     }
-
-
-=======
->>>>>>> Stashed changes
 }
