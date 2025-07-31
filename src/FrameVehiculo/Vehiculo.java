@@ -4,6 +4,7 @@
  */
 package FrameVehiculo;
 
+import SistemaCinturones.Cinturon;
 import SistemaCinturones.Control_Cinturones;
 import SistemaEncendido.Motor;
 import SistemaIluminacion.IntermitentesyEmergencia;
@@ -316,18 +317,19 @@ public class Vehiculo extends javax.swing.JFrame {
         lblKMH.setText("KMH");
         lblKMH.setOpaque(true);
 
-        btnCchofer.setText("jButton1");
+        btnCchofer.setText("Chofer");
         btnCchofer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCchoferActionPerformed(evt);
             }
         });
 
-        btnCcopiloto.setText("jButton2");
-
-        IblCchofer.setText("jLabel1");
-
-        IblCcopiloto.setText("jLabel2");
+        btnCcopiloto.setText("copiloto");
+        btnCcopiloto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCcopilotoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -485,7 +487,6 @@ public class Vehiculo extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPuertDer, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPuertIzq, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -563,7 +564,7 @@ public class Vehiculo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -857,8 +858,28 @@ public class Vehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvanzarActionPerformed
 
     private void btnCchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCchoferActionPerformed
-      
+    Cinturon cinturonChofer = chofer.getIzquierdo();
+    if(cinturonChofer.getSensor().isCinturon()){
+        cinturonChofer.quitar();
+        btnCchofer.setText("poner sinturon");
+        
+    }else{cinturonChofer.poner();
+    btnCchofer.setText("quitar cinturon");
+        
+    }
     }//GEN-LAST:event_btnCchoferActionPerformed
+
+    private void btnCcopilotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCcopilotoActionPerformed
+        Cinturon cinturonCopiloto = chofer.getDerecho();
+    if(cinturonCopiloto.getSensor().isCinturon()){
+        cinturonCopiloto.quitar();
+        btnCchofer.setText("poner sinturon");
+        
+    }else{cinturonCopiloto.poner();
+    btnCchofer.setText("quitar cinturon");
+        
+    }
+    }//GEN-LAST:event_btnCcopilotoActionPerformed
 
     /**
      * @param args the command line arguments
