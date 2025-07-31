@@ -4,6 +4,7 @@
  */
 package FrameVehiculo;
 
+import SistemaCinturones.Control_Cinturones;
 import SistemaEncendido.Motor;
 import SistemaIluminacion.IntermitentesyEmergencia;
 import SistemaIluminacion.LucesPuertas;
@@ -31,6 +32,7 @@ public class Vehiculo extends javax.swing.JFrame {
     private Radio radio = new Radio();
     private Climatizacion climatizacion = new Climatizacion();
     private Kilometraje kilometraje = new Kilometraje();
+    private Control_Cinturones chofer;
     
     /**
      * Creates new form Vehiculo
@@ -49,6 +51,7 @@ public class Vehiculo extends javax.swing.JFrame {
         lblVentilacion.setVisible(false);
         lblAC.setVisible(false);
         lblCalefaccion.setVisible(false);
+        
     }
 
     /**
