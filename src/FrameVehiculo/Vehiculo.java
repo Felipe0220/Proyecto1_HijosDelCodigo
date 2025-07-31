@@ -887,10 +887,11 @@ jProgressBarCombustible.setStringPainted(true); // Muestra el porcentaje
     if(cinturonChofer.getSensor().isCinturon()){
         cinturonChofer.quitar();
         btnCchofer.setText("poner sinturon");
+        IblCchofer.setText("Cinturon:Desabrochado");
         
     }else{cinturonChofer.poner();
     btnCchofer.setText("quitar cinturon");
-        
+     IblCchofer.setText("Cinturon:abrochado");   
     }
     }//GEN-LAST:event_btnCchoferActionPerformed
 
@@ -899,9 +900,11 @@ jProgressBarCombustible.setStringPainted(true); // Muestra el porcentaje
     if(cinturonCopiloto.getSensor().isCinturon()){
         cinturonCopiloto.quitar();
         btnCchofer.setText("poner sinturon");
+        IblCcopiloto.setText("Cinturon:Desabrochado");
         
     }else{cinturonCopiloto.poner();
     btnCchofer.setText("quitar cinturon");
+    IblCcopiloto.setText("Cinturon:abrochado");  
         
     }
     }//GEN-LAST:event_btnCcopilotoActionPerformed
