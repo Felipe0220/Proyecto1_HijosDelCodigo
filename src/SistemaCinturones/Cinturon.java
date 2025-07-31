@@ -20,4 +20,10 @@ public void poner(){
 public void quitar(){
     this.sensor.activado(); 
 }
+
+    public Sensor getSensor() {
+        return sensor;
+    }
+
+
 }
