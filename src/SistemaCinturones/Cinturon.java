@@ -9,7 +9,7 @@ import Funcionalidades.Sensor;
 /**
  *
  * @author UTN
- */
+ */ 
 public class Cinturon  {
      private Sensor sensor;
    
@@ -21,9 +21,12 @@ public void quitar(){
     this.sensor.activado(); 
 }
 
+<<<<<<< Updated upstream
     public Sensor getSensor() {
         return sensor;
     }
 
 
+=======
+>>>>>>> Stashed changes
 }
