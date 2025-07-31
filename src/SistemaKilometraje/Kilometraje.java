@@ -5,6 +5,7 @@
 package SistemaKilometraje;
 
 import Funcionalidades.Encendido;
+import SistemaCombustible.Combustible;
 
 /**
  *
@@ -14,11 +15,13 @@ public class Kilometraje extends Encendido {
     private double kmhTotales;
     private int velocidadActual;
     private int rpm;
-
+    private Combustible combustible;
+    
     public Kilometraje() {
         this.kmhTotales = 0;
         this.velocidadActual = 0;
         this.rpm = 0;
+        this.combustible = combustible;
     }
     
      private void calcularRpm(){
@@ -29,6 +32,7 @@ public class Kilometraje extends Encendido {
         if(estado && velocidadActual< 180){
             velocidadActual+= 10;
             calcularRpm();
+            combustible.usarCombustible(2);
         }
     }
     
@@ -43,6 +47,7 @@ public class Kilometraje extends Encendido {
         if(estado && velocidadActual> 0){
             double horas = segundos/3600.0;
             kmhTotales+= velocidadActual*horas;
+            combustible.usarCombustible(velocidadActual * 0.001);
         }
     }
 
@@ -60,6 +65,6 @@ public class Kilometraje extends Encendido {
     
     public String getEstado(){
         if(!estado) return "Motor apagado";
-        return "Velocidad: " +velocidadActual+ ", Rpm: " +rpm+ ", Kilometros: " +kmhTotales;
+        return "Velocidad: " +velocidadActual+ ", Rpm: " +rpm+ ", Kilometros: " +kmhTotales+", Combustible: " + combustible.getNivel() + "%";
     }
 }
