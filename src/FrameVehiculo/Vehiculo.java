@@ -33,6 +33,7 @@ public class Vehiculo extends javax.swing.JFrame {
     private Climatizacion climatizacion = new Climatizacion();
     private Kilometraje kilometraje = new Kilometraje();
     private Control_Cinturones chofer;
+     private Control_Cinturones copiloto;
     
     /**
      * Creates new form Vehiculo
@@ -110,6 +111,10 @@ public class Vehiculo extends javax.swing.JFrame {
         lblVelocidad = new javax.swing.JLabel();
         lblRPM = new javax.swing.JLabel();
         lblKMH = new javax.swing.JLabel();
+        btnCchofer = new javax.swing.JButton();
+        btnCcopiloto = new javax.swing.JButton();
+        IblCchofer = new javax.swing.JLabel();
+        IblCcopiloto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -311,6 +316,19 @@ public class Vehiculo extends javax.swing.JFrame {
         lblKMH.setText("KMH");
         lblKMH.setOpaque(true);
 
+        btnCchofer.setText("jButton1");
+        btnCchofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCchoferActionPerformed(evt);
+            }
+        });
+
+        btnCcopiloto.setText("jButton2");
+
+        IblCchofer.setText("jLabel1");
+
+        IblCcopiloto.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -354,31 +372,46 @@ public class Vehiculo extends javax.swing.JFrame {
                                         .addComponent(lblPuerDer))
                                     .addComponent(lblLuzAlta, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addComponent(lblLuzBaja)))
-                        .addGap(234, 234, 234)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEstadoRadio))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(lblEstadoClima)
-                                .addGap(115, 115, 115)
-                                .addComponent(lblVelocidad)
-                                .addGap(56, 56, 56)
-                                .addComponent(lblRPM)
-                                .addGap(61, 61, 61)
-                                .addComponent(lblKMH))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(125, 125, 125)
+                                .addGap(234, 234, 234)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblVentilacion)
-                                        .addComponent(lblCalefaccion, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addComponent(lblAC)
-                                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(lblRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblEstadoRadio))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(125, 125, 125)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lblVentilacion)
+                                                .addComponent(lblCalefaccion, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addComponent(lblAC)
+                                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(27, 27, 27)
+                                                .addComponent(lblEstadoClima)
+                                                .addGap(115, 115, 115)
+                                                .addComponent(lblVelocidad)
+                                                .addGap(56, 56, 56)
+                                                .addComponent(lblRPM)
+                                                .addGap(61, 61, 61))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(IblCcopiloto, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                                                    .addComponent(IblCchofer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnCchofer)
+                                            .addComponent(lblKMH)))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCcopiloto))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -416,7 +449,7 @@ public class Vehiculo extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnFrenar))
                             .addComponent(btnAvanzar))))
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,8 +486,8 @@ public class Vehiculo extends javax.swing.JFrame {
                             .addComponent(lblPuertDer, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPuertIzq, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(lblLuzAlta)
@@ -472,19 +505,28 @@ public class Vehiculo extends javax.swing.JFrame {
                                     .addComponent(lblRPM)
                                     .addComponent(lblKMH))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(lblLuzBaja))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLuzDer, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPuerDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRadioEncender)
-                    .addComponent(btnEncenderClima)
-                    .addComponent(btnAcelerar)
-                    .addComponent(btnFrenar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblLuzBaja)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLuzDer, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPuerDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRadioEncender)
+                            .addComponent(btnEncenderClima)
+                            .addComponent(btnAcelerar)
+                            .addComponent(btnFrenar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnCchofer)
+                                .addComponent(IblCchofer, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCcopiloto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(IblCcopiloto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -814,6 +856,10 @@ public class Vehiculo extends javax.swing.JFrame {
         lblKMH.setText("KM/H: " + kilometraje.getKmhTotales());
     }//GEN-LAST:event_btnAvanzarActionPerformed
 
+    private void btnCchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCchoferActionPerformed
+      
+    }//GEN-LAST:event_btnCchoferActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -840,6 +886,8 @@ public class Vehiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IblCchofer;
+    private javax.swing.JLabel IblCcopiloto;
     private javax.swing.JButton bntAC;
     private javax.swing.JButton btnAcelerar;
     private javax.swing.JButton btnAvanzar;
@@ -847,6 +895,8 @@ public class Vehiculo extends javax.swing.JFrame {
     private javax.swing.JButton btnCalefaccion;
     private javax.swing.JButton btnCambiarModo;
     private javax.swing.JButton btnCambiarVelocidad;
+    private javax.swing.JButton btnCchofer;
+    private javax.swing.JButton btnCcopiloto;
     private javax.swing.JToggleButton btnEmergencia;
     private javax.swing.JButton btnEncenderClima;
     private javax.swing.JButton btnFrenar;
