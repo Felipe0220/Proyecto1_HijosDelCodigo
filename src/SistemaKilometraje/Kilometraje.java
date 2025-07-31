@@ -17,11 +17,11 @@ public class Kilometraje extends Encendido {
     private int rpm;
     private Combustible combustible;
     
-    public Kilometraje() {
+    public Kilometraje(Combustible combustible) {
         this.kmhTotales = 0;
         this.velocidadActual = 0;
         this.rpm = 0;
-        this.combustible = combustible;
+        this.combustible = null; 
     }
     
      private void calcularRpm(){
@@ -58,7 +58,10 @@ public class Kilometraje extends Encendido {
     public int getVelocidadActual() {
         return velocidadActual;
     }
-
+public SistemaCombustible.Combustible getCombustible() {
+    return combustible;
+}
+  
     public int getRpm() {
         return rpm;
     }
@@ -67,4 +70,5 @@ public class Kilometraje extends Encendido {
         if(!estado) return "Motor apagado";
         return "Velocidad: " +velocidadActual+ ", Rpm: " +rpm+ ", Kilometros: " +kmhTotales+", Combustible: " + combustible.getNivel() + "%";
     }
+    
 }
